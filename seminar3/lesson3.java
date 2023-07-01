@@ -13,8 +13,8 @@ public class lesson3 {
         
         // task0();
         // task1(createList(10,0,10));
-        // task2();
-        task3();
+        task2();
+        // task3();
 
     }
 
@@ -66,6 +66,7 @@ public class lesson3 {
         list.add(55);
         list.add("hello");
         list.add(12);
+        list.add(15.65);
 
         Iterator iterator = list.iterator();
         while (iterator.hasNext()){
