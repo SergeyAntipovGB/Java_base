@@ -15,7 +15,7 @@ public class Main {
         // task1();
         // task2();
         // task3();
-        // stack();
+        stack();
 
     }
 
@@ -134,9 +134,26 @@ public class Main {
         myStack.push(3);
         myStack.push(6);
         myStack.push(8);
+        myStack.tell();
         System.out.println(myStack.empty());
         System.out.println(myStack.size());
-        System.out.println(myStack.peek());
         System.out.println(myStack.pop());
+        System.out.println(myStack.peek());
+        myStack.tell();
+
+        myStack.push(10);
+
+        myStack.tell();
+
+        myStack.push(20);
+
+        myStack.tell();
+        System.out.println(myStack.empty());
+        System.out.println(myStack.size());
+        System.out.println(myStack.pop());
+                System.out.println(myStack.pop());
+        System.out.println(myStack.peek());
+        myStack.tell();
+
     }
 }

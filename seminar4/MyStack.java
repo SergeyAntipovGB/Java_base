@@ -5,7 +5,7 @@ package seminar4;
 
 public class MyStack {
     
-    private Integer[] arr = new Integer[10];
+    private Integer[] arr = new Integer[5];
 
 
     private int size = 0;
@@ -21,7 +21,7 @@ public class MyStack {
     void push(int item){
         if (size == arr.length) {
             Integer[] arr2 = new Integer[arr.length * 2];
-            System.arraycopy(arr2, 0, arr2, 0, arr.length);
+            System.arraycopy(arr, 0, arr2, 0, arr.length);
             arr = arr2;
         }
         arr[size++] = item;
@@ -32,137 +32,26 @@ public class MyStack {
     }
 
     int pop(){
-        return arr[--size];
+        int item = arr[size - 1];
+        int newSize;
+        if (arr.length / 2 < size)
+            newSize = arr.length;
+        else
+            newSize = arr.length / 2;
+        Integer[] arr2 = new Integer[newSize];
+        System.arraycopy(arr, 0, arr2, 0, --size);
+        arr = arr2;
+        return item;
     }
 
+    void tell(){
+        System.out.print("[");
+        for (int i = 0; i < arr.length; i++) {
+            if ((i == arr.length - 1) || (arr[i + 1] == null)) {
+                System.out.println(arr[i] + "]");
+                break;
+            }else
+                System.out.print(arr[i] + ", ");
+        }
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-// class dList{
-//     static Node head;
-//     static Node tail;
-//     static class Node{
-//         int value;
-//         Node next;
-//         Node prev;
-//     }
-
-//     public static void pushFront(int value){ // O(1)
-//         Node node = new Node();
-//         node.value = value;
-
-//         if(head == null){
-//             tail = node;
-//         }else{
-//             node.next = head;
-//             head.prev = node;
-//         }
-//         head = node;
-//     }
-
-//     public static void popFront(){ // O(1)
-//         if(head != null){
-//             if(head.next == null){
-//                 head = null;
-//                 tail = null;
-//             }else {
-//                 head = head.next;
-//                 head.prev = null;
-//             }
-//         }
-//     }
-//     public static void print(){
-//         Node node = head;
-//         while(node != null){
-//             System.out.printf("%d ", node.value);
-//             node = node.next;
-//         }
-//         System.out.println();
-//     }
-
-//     public static boolean contains(int value){
-//         Node node = head;
-//         while(node != null){
-//             if(node.value == value){
-//                 return true;
-//             }
-//             node = node.next;
-//         }
-//         return false;
-//     }
-
-//     public static void pushBack(int value){ // O(1)
-//         Node node = new Node();
-//         node.value = value;
-
-//         if(tail == null){
-//             head = node;
-//         }else{
-//             node.prev = tail;
-//             tail.next = node;
-//         }
-//         tail = node;
-//     }
-
-//     public static void popBack(){ // O(1)
-//         if(tail != null){
-//             if(tail.prev == null){
-//                 head = null;
-//                 tail = null;
-//             }else {
-//                 tail = tail.prev;
-//                 tail.next = null;
-//             }
-//         }
-//     }
-
-//     public static void sort(){ // O(N^2)
-//         //bubble sort
-//         //for(int i = 0; i < n; i++)
-//             //for(int j = 0; j < n - 1 - i; j++)
-//                // if(A[j] > A[j+1])
-//                     //swap(A[j], A[j+1]);
-
-//         boolean needSort = true;
-//         do{
-//             needSort = false;
-//             Node node = head;
-//             while(node != null && node.next != null){
-//                 if(node.value > node.next.value){
-//                     Node before = node.prev;
-//                     Node cur = node;
-//                     Node next = node.next;
-//                     Node after = next.next;
-
-//                     cur.next = after;
-//                     cur.prev = next;
-//                     next.next = cur;
-//                     next.prev = before;
-
-//                     if(before != null)
-//                         before.next = next;
-//                     else
-//                         head = next;
-
-//                     if(after != null)
-//                         after.prev = cur;
-//                     else
-//                         tail = cur;
-
-//                     needSort = true;
-//                 }
-//                 node = node.next;
-//             }
-
-//         }while(needSort);
-//     }
-// }
