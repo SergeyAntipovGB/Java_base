@@ -5,12 +5,23 @@ public class Program {
 
         MyLinkedList lList = new MyLinkedList();
 
-        lList.enqueue("first");
-        lList.enqueue("second");
-        lList.enqueue("third");
-        lList.enqueue("fourth");
-        lList.enqueue("fifth");
+        lList.enqueue(1);
+        lList.enqueue(2);
+        lList.enqueue(5);
+        lList.enqueue(9);
+        lList.enqueue(12);
 
+        System.out.print("исходный linkedList -> ");
+        lList.toScreen();
+        
+        lList.reverse();
+        System.out.print("перевернутый список -> ");
+        lList.toScreen();
+        
+        System.out.printf("dequeue() возвращает %d,  результирующий список -> ", lList.dequeue());
+        lList.toScreen();
+
+        System.out.printf("first() возвращает %d,  результирующий список -> ", lList.first());
         lList.toScreen();
     }
 
