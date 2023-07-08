@@ -1,4 +1,4 @@
-package seminar5;
+public package seminar5;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -12,10 +12,10 @@ import java.util.TreeMap;
 public class Sem5 {
     public static void main(String[] args) {
         
-        task0();
+        // task0();
         // System.out.println(task1("foo", "bar"));
         // System.out.println(task2("<{a}+{(d*3)}>"));
-        // System.out.println(task3("Мороз и солнце день чудесный Еще ты дремлешь друг прелестный Пора красавица проснись."));
+        System.out.println(task3("Мороз и солнце день чудесный Еще ты дремлешь друг прелестный Пора красавица проснись."));
 
         // TreeMap<Integer, String> db = new TreeMap<>();
         // db.putIfAbsent(1, "один"); System.out.println(db);
