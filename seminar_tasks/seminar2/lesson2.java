@@ -1,4 +1,4 @@
-package seminar2;
+package seminar_tasks.seminar2;
 
 import java.io.FileWriter;
 import java.io.IOException;

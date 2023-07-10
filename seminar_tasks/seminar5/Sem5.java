@@ -1,4 +1,4 @@
-package seminar5;
+package seminar_tasks.seminar5;
 
 
 import Passport;

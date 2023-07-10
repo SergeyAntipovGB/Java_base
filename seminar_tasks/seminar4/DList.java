@@ -1,4 +1,4 @@
-package seminar4;
+package seminar_tasks.seminar4;
 
 public class DList {
     static Node head;

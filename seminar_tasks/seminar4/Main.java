@@ -1,4 +1,4 @@
-package seminar4;
+package seminar_tasks.seminar4;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
