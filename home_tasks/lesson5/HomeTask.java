@@ -14,9 +14,10 @@ public class HomeTask {
         phoneBook.add("80001234572", "Николай");
 
         // System.out.println(phoneBook.getName("Борис"));
-        // System.out.println(phoneBook.getPhoneNum("80001234570"));
+        // System.out.println(phoneBook.getRowPhoneNum("80001234570"));
         // System.out.println(phoneBook.getAll());
         System.out.println(phoneBook.getTreeMap());
+        System.out.println(phoneBook.sortMap());
         
     }
 }
