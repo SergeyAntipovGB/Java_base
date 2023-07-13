@@ -1,12 +1,13 @@
 package home_tasks.lesson5;
 
 import java.util.*;
+import java.util.Map.Entry;
 import java.Arrays;
 
 public class PhoneBook {
     private Map<String, String> map = new HashMap<>();// телефонный справочник
     private Map<String,List<String>> treeMap = new TreeMap<>();// развернутый справочник
-    private Map<Integer, String> counter = new TreeMap<>();// сортировочная временная коллекция
+    private Map<Integer,String> counter = new TreeMap<>();// сортировочная временная коллекция
 
     void add(String phoneNum, String name){
         map.put(phoneNum, name);
@@ -24,7 +25,7 @@ public class PhoneBook {
      * @return treeMap
      */
     Map<String,List<String>> getTreeMap(){
-        for (Map.Entry entry: map.entrySet()){
+        for (Map.Entry<String,String> entry: map.entrySet()){
             if (treeMap.containsKey(entry.getValue())){
                 List<String> list = treeMap.get(entry.getValue());
                 list.add(entry.getKey().toString());
@@ -42,26 +43,24 @@ public class PhoneBook {
      * @return counter
      */
     Map<Integer,String> sortMap(){
-        for (Map.Entry entry: treeMap.entrySet()){
-            List<String> list = toString(((Map<String, String>) entry).values());
-            // if (counter.containsKey(((CharSequence) list).length())){
-            //     String item = counter.get(((CharSequence) list).length());
-                
-            // }else {
-                counter.put(((CharSequence) list).length(), (String) entry.getKey());
-            // }
+        for (Entry<String, List<String>> entry: treeMap.entrySet()){
+            List<String> listValues = ((Map.Entry<String,List<String>>) entry).getValue();
+            counter.put(listValues.size(), (String) entry.getKey());
         }
         return counter;
     }
     
-    
-    static List<String> toString(Object object){
-        List<String> aList = new ArrayList<String>();
-        for (String text: object){
-            aList.add(text);
-        }
-        return aList;
+    void printMap(){
+        
     }
+    
+    // static List<String> toString(Object object){
+    //     List<String> aList = new ArrayList<String>();
+    //     for (String text: object){
+    //         aList.add(text);
+    //     }
+    //     return aList;
+    // }
 
 
 
