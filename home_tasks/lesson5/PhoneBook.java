@@ -2,7 +2,6 @@ package home_tasks.lesson5;
 
 import java.util.*;
 import java.util.Map.Entry;
-import java.Arrays;
 
 public class PhoneBook {
     private Map<String, String> map = new HashMap<>();// телефонный справочник
@@ -42,31 +41,33 @@ public class PhoneBook {
      * @param getTreeMap
      * @return counter
      */
-    Map<Integer,String> sortMap(){
-        for (Entry<String, List<String>> entry: treeMap.entrySet()){
+    void sortMap(){
+        for (Entry<String, List<String>> entry: getTreeMap().entrySet()){
             List<String> listValues = ((Map.Entry<String,List<String>>) entry).getValue();
             counter.put(listValues.size(), (String) entry.getKey());
         }
-        return counter;
+        System.out.println("\nСортированный телефонный справочник");
+        for (Entry<Integer,String> entry: ((TreeMap<Integer, String>) counter).descendingMap().entrySet()){
+            System.out.println(entry.getValue()+": "+getPhones(treeMap.get(entry.getValue())));
+        }
     }
     
-    void printMap(){
-        
+    /**метод конвертирует список телефонов в строку
+     * @param listPhones
+     * @return stringPhones
+     */
+    String getPhones(List<String> listPhones){
+        StringBuilder stringPhones = new StringBuilder();
+        for (String item: listPhones){
+            stringPhones.append(item + ", ");
+        }
+        stringPhones.setLength(stringPhones.length()-2);
+        return stringPhones.toString();
     }
-    
-    // static List<String> toString(Object object){
-    //     List<String> aList = new ArrayList<String>();
-    //     for (String text: object){
-    //         aList.add(text);
-    //     }
-    //     return aList;
-    // }
-
-
 
     String getName(String name){
         StringBuilder stringBuilder = new StringBuilder();
-        for (Map.Entry entry: map.entrySet()) {
+        for (Map.Entry<String, String> entry: map.entrySet()) {
             if(entry.getValue().equals(name)){
                 stringBuilder.append(entry.getValue());
                 stringBuilder.append(" : ");
