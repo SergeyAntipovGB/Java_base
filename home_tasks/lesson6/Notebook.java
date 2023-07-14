@@ -7,7 +7,7 @@ public class Notebook {
     private String os;
     private String color;
 
-    public int getRam() {
+    public int getRam(int ram) {
         return ram;
     }
 
