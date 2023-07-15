@@ -6,8 +6,24 @@ public class Notebook {
     private int hdd;
     private String os;
     private String color;
+    
+    public void setRam(int ram) {
+        this.ram = ram;
+    }
 
-    public int getRam(int ram) {
+    public void setHdd(int hdd) {
+        this.hdd = hdd;
+    }
+
+    public void setOs(String os) {
+        this.os = os;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public int getRam() {
         return ram;
     }
 
@@ -23,12 +39,20 @@ public class Notebook {
         return color;
     }
 
-    public Notebook(int ram, int hdd, String os, String color){
+    public Notebook(int ram, int hdd, String os, String color) {
         this.ram = ram;
         this.hdd = hdd;
         this.os = os;
         this.color = color;
     }
+
+    public Notebook() {
+        this.ram = 0;
+        this.hdd = 0;
+        this.os = "none";
+        this.color = "none";
+    }
+
 
     @Override
     public String toString() {
@@ -36,12 +60,12 @@ public class Notebook {
     }
 
     @Override
-    public int hashCode(){
+    public int hashCode() {
         return 6 * ram + 12 * hdd + 3 * os.hashCode() + 8 * color.hashCode();
     }
 
     @Override
-    public boolean equals(Object o){
+    public boolean equals(Object o) {
         if(this == o) return true;
         if(!(o instanceof Notebook)) return false;
         Notebook notebook = (Notebook)o;
