@@ -1,4 +1,3 @@
-package Java_base.new;
 
 import java.util.Map;
 import java.util.TreeMap;

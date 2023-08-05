@@ -1,9 +1,8 @@
-package Java_base.new;
 
 public class Person {
     private String name;
 
-    public void person(String name){
+    public Person(String name){
         this.name = name;
     }
 
